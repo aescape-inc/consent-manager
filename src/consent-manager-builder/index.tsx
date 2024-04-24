@@ -1,14 +1,14 @@
+import { CookieAttributes } from 'js-cookie'
 import { Component } from 'react'
-import { loadPreferences, savePreferences } from './preferences'
-import fetchDestinations from './fetch-destinations'
-import conditionallyLoadAnalytics from './analytics'
 import {
-  Destination,
   CategoryPreferences,
   CustomCategories,
-  DefaultDestinationBehavior
+  DefaultDestinationBehavior,
+  Destination
 } from '../types'
-import { CookieAttributes } from 'js-cookie'
+import conditionallyLoadAnalytics from './analytics'
+import fetchDestinations from './fetch-destinations'
+import { loadPreferences, savePreferences } from './preferences'
 
 function getNewDestinations(destinations: Destination[], preferences: CategoryPreferences) {
   const newDestinations: Destination[] = []
