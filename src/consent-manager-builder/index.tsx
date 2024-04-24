@@ -150,7 +150,7 @@ export default class ConsentManagerBuilder extends Component<Props, State> {
     onError: undefined,
     shouldRequireConsent: () => true,
     initialPreferences: {},
-    cdnHost: 'cdn.segment.com',
+    cdnHost: 'analytics.aescape.com',
     shouldReload: true,
     devMode: false,
     useDefaultCategories: false

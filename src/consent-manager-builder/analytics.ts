@@ -43,7 +43,7 @@ export default function conditionallyLoadAnalytics({
   categoryPreferences
 }: AnalyticsParams) {
   const wd = window as WindowWithAJS
-  const integrations = { All: false, 'Segment.io': true }
+  const integrations = { All: false, 'Segment.io': { apiHost: "tracking.aescape.com/v1" } }
   let isAnythingEnabled = false
 
   if (!destinationPreferences) {
@@ -53,7 +53,7 @@ export default function conditionallyLoadAnalytics({
 
     // Load a.js normally when consent isn't required and there's no preferences
     if (!wd.analytics.initialized) {
-      wd.analytics.load(writeKey)
+      wd.analytics.load(writeKey, { integrations: { "Segment.io": { apiHost: "tracking.aescape.com/v1" }}})
     }
     return
   }
